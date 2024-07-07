@@ -9,7 +9,8 @@ body {
     /* align-items: center; */
     width: 80%;
     margin: auto;
-    padding: 20px;
+    padding-top: 1%;
+    /* margin-bottom: -3.5%; */
 }
 
 h1 {
@@ -80,4 +81,111 @@ h1 {
 
 #suggestions div:hover {
     background-color: #e0e0e0;
+}
+.carousel-inner {
+    position: relative; /* Make carousel-inner the reference for positioning */
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+  
+  .carousel-inner:before,
+  .carousel-inner:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: some-percentage; /* Adjust for desired fade height */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Fade to black at bottom */
+  }
+  
+  .carousel-inner:after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Fade to black at top */
+  }
+  .carousel-fade { /* Added a new class for the carousel container */
+    opacity: 0; /* Initially hide the carousel */
+    transition: opacity 1s ease-in-out; /* Fade in on load */
+  }
+  
+  .carousel-fade.active { /* Added active state for the carousel */
+    opacity: 1; /* Show the carousel when active */
+  }
+  
+  .carousel-item { /* Existing styles */
+    opacity: 0; /* Initially hide all carousel items */
+    transition: opacity 0.5s ease-in-out; /* Fade in individual slides */
+  }
+  
+  .carousel-item.active { /* Existing styles */
+    opacity: 1; /* Show the active slide */
+  }
+  
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.poster-container {
+  width: 100%;
+  padding-top: 70%; /* 70% aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.poster-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.movie-genre,
+.movie-rating {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.cent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the parent container has a height */
+  text-align: center; /* Optional: to center text */
 }
